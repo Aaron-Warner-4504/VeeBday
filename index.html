@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://wallpapercave.com/wp/Pxlsk2Z.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+            max-width: 80%;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            animation: textGlow 1.5s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            }
+            to {
+                text-shadow: 3px 3px 15px rgba(255, 223, 0, 1);
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .highlight-message {
+            font-size: 1.8rem;
+            color: #ffeb3b;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            animation: fadeInText 3s ease-in-out;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            transform: translateY(5px);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #e64a19;
+            transform: translateY(0);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            color: #ffeb3b;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hidden-message img {
+            max-width: 100px;
+            border-radius: 10px;
+            margin-top: 10px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Happy Birthday, Vee!</h1>
+            <p class="highlight-message">Happiest Birthday to the most beautiful yet a little lazy girl in the world!</p>
+            <p>May your day be filled with joy and wonder.</p>
+            <a href="reveal.html"><button id="reveal-message">Reveal Message</button></a>
+            <a href="voice.html"><button id="voice-message">Voice Message</button></a>
+            <a href="poem.html"><button id="poem-message">Poem</button></a>
+            <p id="personal-message" class="hidden-message">
+                Wishing you all the happiness in the world!
+                <br><br>
+                <img src="https://via.placeholder.com/100x100?text=Gift" alt="Gift">
+            </p>
+        </div>
+        <canvas id="confetti-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealButton = document.getElementById('reveal-message');
+            const personalMessage = document.getElementById('personal-message');
+            const confettiCanvas = document.getElementById('confetti-canvas');
+            const confetti = window.confetti.create(confettiCanvas, { resize: true });
+
+            revealButton.addEventListener('click', () => {
+                personalMessage.style.display = 'block'; // Show the personal message
+                revealButton.style.display = 'none'; // Hide the button after revealing
+            });
+
+            // Trigger confetti effect on page load
+            confetti({
+                particleCount: 200,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+    </script>
+</body>
+</html>

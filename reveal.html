@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://imgs.search.brave.com/EEJT8ebd9MPcqvrOvcjWZdaVALNQgBcPi0utUR16820/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS85My8z/My9zUWpQVGIuanBn') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .parallax {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+
+        .parallax-layer.bg1 {
+            background-image: url('https://imgs.search.brave.com/EEJT8ebd9MPcqvrOvcjWZdaVALNQgBcPi0utUR16820/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS85My8z/My9zUWpQVGIuanBn');
+            z-index: 1;
+            transform: translateZ(-1px) scale(1.5);
+        }
+
+        .parallax-layer.bg2 {
+            background-image: url('https://imgs.search.brave.com/EEJT8ebd9MPcqvrOvcjWZdaVALNQgBcPi0utUR16820/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS85My8z/My9zUWpQVGIuanBn');
+            z-index: 2;
+            transform: translateZ(0);
+        }
+
+        .message-container {
+            position: relative;
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+            max-width: 80%;
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            animation: textGlow 2s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 3px 3px 10px rgba(255, 223, 0, 0.7);
+            }
+            to {
+                text-shadow: 3px 3px 20px rgba(255, 223, 0, 1);
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: #ffeb3b;
+            margin: 20px auto;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            max-width: 90%;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ff5722;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+
+        .sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('https://via.placeholder.com/1920x1080?text=Sparkles') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5;
+            animation: sparkle 3s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="parallax-layer bg1"></div>
+        <div class="parallax-layer bg2"></div>
+        <div class="message-container">
+            <h1>Special Message</h1>
+            <p>
+                Dear Vee,<br><br>
+                Today is all about celebrating you, the amazing and unique person that you are. Your kindness, smile, and beauty shine brightly in everything you do. From your infectious laughter to your unwavering support, you bring joy and warmth into the lives of everyone around you. On your special day, I want you to know just how deeply you are cherished and admired.We don't talk much still I feel a connect with you let it be opinions or any other aspects of life.It just feels like I found myself in opposite gender as a very good friend of mine. The hardwork you put in everything is just amazing.Let it be some work that you are doing or in any relations like firendship.I can talk about you for decades still I would find myself incomplete describing about you. Hats-Off to the most amazing girl I have ever-met.And at last I want to say that May this year be filled with endless happiness, new adventures, and the fulfillment of all your dreams. You deserve nothing but the very best, and I am so grateful to have you in my life. Happy Birthday!
+            </p>
+            <a href="index.html">Back to Homepage</a>
+        </div>
+        <div class="sparkles"></div>
+    </div>
+</body>
+</html>
